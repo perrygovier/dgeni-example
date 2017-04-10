@@ -1,0 +1,22 @@
+machine:
+  node:
+    version: 6.9.1
+  ruby:
+    version: 2.2.3
+
+general:
+  branches:
+    only:
+      - master # ignore PRs and branches
+
+test:
+  override:
+    - echo "no tests"
+
+deployment:
+ staging:
+   branch: master
+   commands:
+     - ./node_modules/.bin/gulp docs
+     - git add docs && git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1"
+     - git push origin master

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<h1>My cool docs</h1>
+
+<p>Pages:</p>
+<ul>
+<@ for doc in docs @><@ if doc.id != 'index' @>
+<li>
+  <a href="/<$ doc.outputPath $>"><$ doc.id $></a>
+</li><@ endif @><@ endfor @>
+</ul>
