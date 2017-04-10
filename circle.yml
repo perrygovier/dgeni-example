@@ -18,7 +18,7 @@ jobs:
       - add_ssh_keys
       - deploy:
           name: Update docs
-          commands:
+          command:
             - ./node_modules/.bin/gulp docs
             - git add docs && git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1"
             - git push origin master
