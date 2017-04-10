@@ -19,4 +19,4 @@ jobs:
       - deploy:
           name: Update docs
           command:
-            - ./node_modules/.bin/gulp docs && git add docs && git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1" && git push origin master
+            - "./node_modules/.bin/gulp docs && git add docs && git commit -m \"Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1\" && git push origin master"
