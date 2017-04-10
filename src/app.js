@@ -1,8 +1,9 @@
 /**
  * @description This function logs a string.
+ * @param {any} thing The the thing to log
  */
-function log() {
-  console.log('Logging.');
+function log(thing) {
+  console.log(thing);
 }
 
 /**
