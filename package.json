@@ -5,7 +5,7 @@
   "description": "[dgeni](https://github.com/angular/dgeni) is a documentation generator developed by the [Angular team](https://github.com/angular). Ironically it lacks documentation right now, so we try to develop a very simple step-by-step-guide here, until a better documentation is available. Please share and fork this Gist.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",

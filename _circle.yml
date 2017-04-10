@@ -20,3 +20,27 @@ deployment:
      - ./node_modules/.bin/gulp docs
      - git add docs && git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1"
      - git push origin master
+version: 2
+jobs:
+  build:
+    working_directory: ~/ionic/
+    docker:
+      - image: node:7
+    steps:
+      - checkout
+      - restore_cache:
+         key: node_modules_{{ checksum "package.json" }}
+      - run:
+         name: Install node modules
+         command: npm i
+      - save_cache:
+         key: node_modules_{{ checksum "package.json" }}
+         paths:
+         - ~/dgeni-example/node_modules/
+      - add_ssh_keys
+      - deploy:
+          name: Update docs
+          commands:
+            - ./node_modules/.bin/gulp docs
+            - git add docs && git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1"
+            - git push origin master
