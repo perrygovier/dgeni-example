@@ -1,9 +1,12 @@
 /**
  * @description This function logs a string.
  * @param {any} thing The the thing to log
+ * @param {boolean} toLog Whether to log the thing
  */
-function log(thing) {
-  console.log(thing);
+function log(thing, toLog) {
+  if(toLog){
+    console.log(thing);
+  }
 }
 
 /**
