@@ -21,5 +21,7 @@ jobs:
           command: |
            ./node_modules/.bin/gulp docs
            git add docs
+           git config --global user.email "perry@ionic.io"
+           git config --global user.name "perry"
            git commit -m "Docs auto commit perrygovier/$CIRCLE_PROJECT_REPONAME@$CIRCLE_SHA1"
            git push origin master
