@@ -7,6 +7,6 @@ layout: default
 <ul>
 <@ for doc in docs @><@ if doc.id != 'index' @>
 <li>
-  <a href="/<$ doc.outputPath $>"><$ doc.id $></a>
+  <a href="./<$ doc.outputPath $>"><$ doc.id $></a>
 </li><@ endif @><@ endfor @>
 </ul>
